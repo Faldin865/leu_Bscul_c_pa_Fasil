@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   crt_tab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 17:47:34 by tsannie           #+#    #+#             */
-/*   Updated: 2020/07/20 19:00:12 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/20 19:08:19 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**ouverture(char *map_file)
 	if (!(str = malloc(sizeof(char) * nb_char_file(map_file) + 1)))
 		return (NULL);
 	imp(str, map_file);
-	res = ft_split(str, "\n");
+	res = ft_split(str);
 	free(str);
 	return (res);
 }

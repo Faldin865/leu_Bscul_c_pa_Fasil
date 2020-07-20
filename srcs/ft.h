@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 13:54:40 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/20 17:40:59 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/20 19:08:36 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 # include <fcntl.h>
 # include <stdlib.h>
 
-int		ft_strlen(char *str);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int		ft_invalid(void);
+int			ft_strlen(char *str);
+void		ft_putchar(char c);
+void		ft_putstr(char *str);
+int			ft_invalid(void);
+char		**ft_split(char *str);
 
 typedef	struct	s_map_param
 {
