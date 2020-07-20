@@ -6,20 +6,20 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 19:31:07 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/20 15:37:34 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/20 18:57:25 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int			ft_sep(char c, char *charset)
+int			ft_sep(char c)
 {
 	if ('\n' == c)
 		return (1);
 	return (0);
 }
 
-int			ft_count_word(char *str, char *charset)
+int			ft_count_word(char *str)
 {
 	int i;
 	int n;
@@ -31,9 +31,9 @@ int			ft_count_word(char *str, char *charset)
 	while (str[i])
 	{
 		n = 0;
-		while (str[i] && ft_sep(str[i], charset) == 1)
+		while (str[i] && ft_sep(str[i]) == 1)
 			i++;
-		while (str[i] && ft_sep(str[i], charset) == 0 && ++n)
+		while (str[i] && ft_sep(str[i]) == 0 && ++n)
 			i++;
 		if (n > 0)
 			word++;
@@ -41,7 +41,7 @@ int			ft_count_word(char *str, char *charset)
 	return (word);
 }
 
-char		**ft_mem(char *str, char *charset, char **re)
+char		**ft_mem(char *str, char **re)
 {
 	int i;
 	int n;
@@ -52,9 +52,9 @@ char		**ft_mem(char *str, char *charset, char **re)
 	while (str[i])
 	{
 		n = 0;
-		while (str[i] && ft_sep(str[i], charset) == 1)
+		while (str[i] && ft_sep(str[i]) == 1)
 			i++;
-		while (str[i] && ft_sep(str[i], charset) == 0)
+		while (str[i] && ft_sep(str[i]) == 0)
 		{
 			i++;
 			n++;
@@ -66,7 +66,7 @@ char		**ft_mem(char *str, char *charset, char **re)
 	return (re);
 }
 
-char		**ft_alloc(char *str, char *charset, char **re, int i)
+char		**ft_alloc(char *str, char **re, int i)
 {
 	int n;
 	int x;
@@ -78,9 +78,9 @@ char		**ft_alloc(char *str, char *charset, char **re, int i)
 	{
 		x = 0;
 		n = 0;
-		while (str[i] && ft_sep(str[i], charset) == 1)
+		while (str[i] && ft_sep(str[i]) == 1)
 			i++;
-		while (str[i] && ft_sep(str[i], charset) == 0 && ++n)
+		while (str[i] && ft_sep(str[i]) == 0 && ++n)
 			i++;
 		while (n > x)
 		{
@@ -93,7 +93,7 @@ char		**ft_alloc(char *str, char *charset, char **re, int i)
 	return (re);
 }
 
-char		**ft_split(char *str, char *charset)
+char		**ft_split(char *str)
 {
 	char	**re;
 	char	*src;
@@ -103,10 +103,10 @@ char		**ft_split(char *str, char *charset)
 	src = str;
 	if (src == '\0')
 		return (0);
-	if (!(re = malloc(sizeof(char*) * (ft_count_word(src, charset) + 1))))
+	if (!(re = malloc(sizeof(char*) * (ft_count_word(src) + 1))))
 		return (0);
-	re = ft_mem(src, charset, re);
-	re = ft_alloc(src, charset, re, i);
-	re[ft_count_word(src, charset)] = 0;
+	re = ft_mem(src, re);
+	re = ft_alloc(src, re, i);
+	re[ft_count_word(src)] = 0;
 	return (re);
 }
