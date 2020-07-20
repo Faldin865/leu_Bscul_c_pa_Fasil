@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 17:47:34 by tsannie           #+#    #+#             */
-/*   Updated: 2020/07/20 19:08:19 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/20 19:41:16 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char	**ouverture(char *map_file)
 		return (NULL);
 	imp(str, map_file);
 	res = ft_split(str);
+	if (res == '\0')
+		return (NULL);
 	free(str);
 	return (res);
 }

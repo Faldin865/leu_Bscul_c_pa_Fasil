@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 15:49:21 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/20 15:57:15 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/20 20:29:28 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@ int		main(int argc, char **argv)
 {
 	if (argc == 3)
 	{
-		if (check_map != 1)
-			return (ft_invalid());
+		if (init_board() == NULL)
+			return (0);
 	}
-	else
-	{
-		
-	}
-	
+	return (0);
 }
