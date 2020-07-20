@@ -1,0 +1,1 @@
+ perl map.pl (LONGUEUR) (HAUTEUR) (difficulté?) > exemple_file
