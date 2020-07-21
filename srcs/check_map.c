@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 15:33:35 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 10:35:30 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/21 16:13:24 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-unsigned int		ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
-	unsigned int		i;
+	int		i;
 
 	i = 0;
 	while (str[i])
@@ -45,8 +45,8 @@ int					check_char(char **map, t_map_param *param)
 
 int					check_size_str(char **map, t_map_param *param)
 {
-	unsigned int		i;
-	unsigned int		n;
+	int		i;
+	int		n;
 
 	i = 1;
 	n = 1;
@@ -66,7 +66,7 @@ int					check_size_str(char **map, t_map_param *param)
 
 int					check_map(char **map, t_map_param *param)
 {
-	unsigned int y;
+	int y;
 
 	y = 1;
 	while (map[y])

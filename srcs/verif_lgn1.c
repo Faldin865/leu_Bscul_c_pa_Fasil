@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:17:30 by tsannie           #+#    #+#             */
-/*   Updated: 2020/07/21 15:39:18 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/21 16:15:17 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int		verif_same(t_map_param *param)
 {
-	if (param->c_pot == param->obs || param->c_pot == param->filler || param->obs == param->filler)
-		return -1;
-	return 0;
+	if (param->c_pot == param->obs || param->c_pot == param->filler
+		|| param->obs == param->filler)
+		return (-1);
+	return (0);
 }
 
 int		verif_nb(char *str, int i_dep)
@@ -81,16 +82,13 @@ int		all_char(char *str, t_map_param *param)
 	return (0);
 }
 
-int		verif_lgn1(char *str)
+int		verif_lgn1(char *str, t_map_param *param)
 {
-	t_map_param *param;
-	if (!(param = malloc(sizeof(t_map_param) * 1)))
-		return (-1);
 	if (ft_strlen(str) < 4)
 		return (-1);
 	if (all_char(str, param) != 0)
 		return (-1);
 	if (verif_same(param) != 0)
-		return(-1);
+		return (-1);
 	return (0);
 }
