@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 15:49:21 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 16:14:02 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/21 18:26:16 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		main(int argc, char **argv)
 {
-	int i;
-	char	**map;
+	int			i;
+	char		**map;
 	t_map_param	*param;
 
 	i = 1;
@@ -29,7 +29,8 @@ int		main(int argc, char **argv)
 			{
 				return (ft_invalid());
 			}
-			// TODO prinmap resolu
+			print_complete(map);
+			free(map);
 			free(param);
 			i++;
 		}

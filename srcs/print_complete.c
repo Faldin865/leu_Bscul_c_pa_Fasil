@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 17:53:41 by tsannie           #+#    #+#             */
-/*   Updated: 2020/07/21 18:00:44 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/21 18:23:18 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,8 @@ void	print_complete(char **tab)
 	e = 0;
 	while (tab[e])
 	{
-		while (tab[i])
-		{
-			ft_putstr(tab[e][i]);
-			i++;
-		}
-		ft_putchar("\n");
+		ft_putstr(tab[e]);
+		ft_putchar('\n');
 		i = 0;
 		e++;
 	}
