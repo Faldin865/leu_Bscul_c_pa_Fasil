@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 15:33:35 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 18:09:49 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/21 18:44:51 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,15 @@ int					check_map(char **map, t_map_param *param)
 	y = 1;
 	while (map[y])
 		y++;
-	if (param->size_y != y)
+	printf("CACA0\n");				/////////////////////////
+	if (param->size_y != y - 1)
 		return (-1);
+	printf("CACA1\n");				////////////////////////////////
 	if (check_size_str(map, param) != 0)
 		return (-1);
+	printf("CACA2\n");				/////////////////////////
 	if (check_char(map, param) != 0)
 		return (-1);
+	printf("CACA3\n");				/////////////////////////
 	return (0);
 }

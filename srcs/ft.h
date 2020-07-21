@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 13:54:40 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 18:26:54 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/21 18:52:16 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <stdlib.h>
+
+# include <stdio.h>	//////////////////////////////////////////
 
 typedef	struct	s_map_param
 {
@@ -61,5 +63,7 @@ char			**map_print(t_map_print *square,
 				char **map, t_map_param *param);
 t_map_print		*temp_to_square(t_temp_sqr *temp_square, t_map_print *square);
 t_temp_sqr		*temp_fill(t_temp_sqr *temp_square, int y, int x);
+int				init_struct(void);
+char		**find_bsq(t_temp_sqr *temp_square, t_map_print *square, t_map_param *param, char **map);
 
 #endif
