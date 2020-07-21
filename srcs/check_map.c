@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 15:33:35 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/20 19:26:00 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/21 10:35:30 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-int		ft_strlen(char *str)
+unsigned int		ft_strlen(char *str)
 {
-	int		i;
+	unsigned int		i;
 
 	i = 0;
 	while (str[i])
@@ -22,7 +22,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-int		check_char(char **map, t_map_param *param)
+int					check_char(char **map, t_map_param *param)
 {
 	int y;
 	int x;
@@ -43,14 +43,14 @@ int		check_char(char **map, t_map_param *param)
 	return (0);
 }
 
-int		check_size_str(char **map, t_map_param *param)
+int					check_size_str(char **map, t_map_param *param)
 {
-	int		i;
-	int		n;
+	unsigned int		i;
+	unsigned int		n;
 
 	i = 1;
 	n = 1;
-	while (i < param->size_y)
+	while (i <= param->size_y)
 	{
 		if (ft_strlen(map[i]) != ft_strlen(map[n]))
 			return (-1);
@@ -64,9 +64,9 @@ int		check_size_str(char **map, t_map_param *param)
 	return (0);
 }
 
-int		check_map(char **map, t_map_param *param)
+int					check_map(char **map, t_map_param *param)
 {
-	int y;
+	unsigned int y;
 
 	y = 1;
 	while (map[y])

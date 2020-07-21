@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:30:09 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/20 20:28:59 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/21 10:38:44 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	**init_board(void)
 {
 	char	**map;
 
-	if (ouverture("exemple_file") == NULL)
-		return (-1);
-	map = ouverture("exemple_file");
+	if (ouverture(argv[i]) == NULL)
+		return (NULL);
+	map = ouverture(argv[i]);
 	if (check_map(map, param) != 0)
-		return (-1);
+		return (NULL;
 	return (map);
 }

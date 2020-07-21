@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 13:54:40 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/20 19:43:11 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/21 10:58:33 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,24 @@ typedef	struct	s_map_param
 	char	obs;
 	char	filler;
 }				t_map_param;
+
+typedef	struct	s_temp_sqr
+{
+	int		size_sqr;
+	int		start_y;
+	int		start_x;
+	int		end_y;
+	int		end_x;
+}				t_temp_sqr;
+
+typedef	struct	s_print_sqr
+{
+	int		size_sqr;
+	int		start_y;
+	int		start_x;
+	int		end_y;
+	int		end_x;
+}				t_map_print;
 
 int				ft_strlen(char *str);
 void			ft_putchar(char c);
