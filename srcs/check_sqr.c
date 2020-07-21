@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 12:22:32 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 14:23:42 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/21 18:17:20 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,45 +25,51 @@ int				init_struct(void)
 }
 
 t_temp_sqr		*temp_bsq(t_temp_sqr *temp_square, t_map_param *param,
-				char **map)
+		char **map)
 {
 	int		y;
 	int		x;
 	int		n_y;
 	int		i_x;
 
-	n_y = 1;
-	i_x = 1;
 	y = temp_square->start_y;
 	x = temp_square->start_x;
-	while (map[y][x])
+	i_x = x;
+	n_y = y;
+	while (map[n_y][i_x] && map[n_y][i_x] == param->c_pot)
 	{
-		while (map[y][x + i_x] == param->c_pot && map[y + n_y][x] == param->c_pot)
+		while (y <= n_y)
 		{
-			if(map[y + n_y][x + i_x] == param->c_pot)
+			while (x <= i_x)
 			{
-				n_y++;
-				i_x++;
+				if (map[y][x] != param->c_pot)
+					return (temp_fill(temp_square, n_y, i_x));
+				else
+					x++;
 			}
-			else
-			{
-				temp_square->end_x = x + i_x;
-				temp_square->end_y = y + n_y;
-				temp_square->size_sqr = (x - i_x) * (y - n_y);
-			}
-			
+			x = temp_square->start_x;
+			y++;
 		}
-		if 
+		y = temp_square->start_y;
+		i_x++;
+		n_y++;
 	}
+	temp_square->end_x = i_x;
+	temp_square->end_y = n_y;
+	temp_square->size_sqr = (x - i_x) * (y - n_y);
 	return (temp_square);
 }
 
-t_map_print		*find_bsq(t_temp_sqr *temp_square,
-				t_map_print *square, t_map_param *param, char **map)
+char		**find_bsq(t_temp_sqr *temp_square,
+		t_map_print *square, t_map_param *param, char **map)
 {
 	int		y;
 	int		x;
 
+	y = 1;
+	x = 0;
+	if (init_struct() == -1)
+		return (NULL);
 	while (map[y])
 	{
 		while (map[y][x])
@@ -74,18 +80,32 @@ t_map_print		*find_bsq(t_temp_sqr *temp_square,
 				temp_square->start_y = y;
 				temp_square = temp_bsq(temp_square, param, map);
 				if (square->size_sqr < temp_square->size_sqr)
-				{
-					square->size_sqr = temp_square->size_sqr;
-					square->start_y = temp_square->start_y;
-					square->start_x = temp_square->start_x;
-					square->end_y = temp_square->end_y;
-					square->end_x = temp_square->end_x;
-				}
+					square = temp_to_square(temp_square, square);
 			}
 			x++;
 		}
 		x = 0;
 		y++;
 	}
-	return (square);
+	return (map_print(square, map, param));
+}
+
+char	**map_print(t_map_print *square, char **map, t_map_param *param)
+{
+	int		y;
+	int		x;
+
+	x = square->start_x;
+	y = square->start_y;
+	while (y <= square->end_y)
+	{
+		while (x <= square->end_x)
+		{
+			map[y][x] = param->filler;
+			x++;
+		}
+		x = square->start_x;
+		y++;
+	}
+	return (map);
 }

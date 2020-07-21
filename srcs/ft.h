@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 13:54:40 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 18:01:03 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/21 18:18:13 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ long			ft_atoi(char *str);
 int				verif_lgn1(char *str, t_map_param *param);
 char			**init_board(char *name, t_map_param *param);
 void			print_complete(char **tab);
+char			**map_print(t_map_print *square,
+				char **map, t_map_param *param);
+t_map_print		*temp_to_square(t_temp_sqr *temp_square, t_map_print *square);
+t_temp_sqr		*temp_fill(t_temp_sqr *temp_square, int y, int x);
 
 #endif

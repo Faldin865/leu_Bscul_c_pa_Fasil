@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 15:33:35 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 16:13:24 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/21 18:09:49 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-int		ft_strlen(char *str)
+int					ft_strlen(char *str)
 {
 	int		i;
 
