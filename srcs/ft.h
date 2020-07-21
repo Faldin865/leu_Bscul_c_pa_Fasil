@@ -6,7 +6,7 @@
 /*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 13:54:40 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 16:12:16 by tsannie          ###   ########.fr       */
+/*   Updated: 2020/07/21 18:01:03 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ int				check_map(char **map, t_map_param *param);
 long			ft_atoi(char *str);
 int				verif_lgn1(char *str, t_map_param *param);
 char			**init_board(char *name, t_map_param *param);
+void			print_complete(char **tab);
 
 #endif
