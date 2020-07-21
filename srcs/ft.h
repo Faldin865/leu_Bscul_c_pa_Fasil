@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 13:54:40 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 10:58:33 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/21 15:37:10 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int				ft_invalid(void);
 char			**ft_split(char *str);
 char			**ouverture(char *map_file);
 int				check_map(char **map, t_map_param *param);
+long			ft_atoi(char *str);
 
 #endif
