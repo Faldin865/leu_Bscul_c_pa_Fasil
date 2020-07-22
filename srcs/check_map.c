@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsannie <tsannie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 15:33:35 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 18:44:51 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/22 11:06:59 by tsannie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int					check_size_str(char **map, t_map_param *param)
 		}
 		n++;
 	}
+	param->len = ft_strlen(map[1]);
 	return (0);
 }
 
