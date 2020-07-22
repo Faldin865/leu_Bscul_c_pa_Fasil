@@ -6,7 +6,7 @@
 /*   By: gpaul <gpaul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 13:54:40 by gpaul             #+#    #+#             */
-/*   Updated: 2020/07/21 18:52:16 by gpaul            ###   ########.fr       */
+/*   Updated: 2020/07/22 10:45:39 by gpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 typedef	struct	s_map_param
 {
+	int		len;
 	int		size_y;
 	char	c_pot;
 	char	obs;
